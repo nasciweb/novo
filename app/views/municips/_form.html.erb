@@ -1,0 +1,62 @@
+<%= form_with(model: municip) do |form| %>
+  <% if municip.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(municip.errors.count, "error") %> prohibited this municip from being saved:</h2>
+
+      <ul>
+        <% municip.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :nome, style: "display: block" %>
+    <%= form.text_field :nome %>
+  </div>
+
+  <div>
+    <%= form.label :cpf, style: "display: block" %>
+    <%= form.text_field :cpf %>
+  </div>
+
+  <div>
+    <%= form.label :cns, style: "display: block" %>
+    <%= form.text_field :cns %>
+  </div>
+
+  <div>
+    <%= form.label :emailmunicipe, style: "display: block" %>
+    <%= form.text_field :emailmunicipe %>
+  </div>
+
+  <div>
+    <%= form.label :data, style: "display: block" %>
+    <%= form.date_field :data %>
+  </div>
+
+  <div>
+    <%= form.label :nascimento, style: "display: block" %>
+    <%= form.date_field :nascimento %>
+  </div>
+
+  <div>
+    <%= form.label :telefone, style: "display: block" %>
+    <%= form.text_field :telefone %>
+  </div>
+
+  <div>
+    <%= form.label :foto, style: "display: block" %>
+    <%= form.text_field :foto %>
+  </div>
+
+  <div>
+    <%= form.label :status, style: "display: block" %>
+    <%= form.text_field :status %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
