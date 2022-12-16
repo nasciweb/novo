@@ -37,7 +37,9 @@ class MunicipsController < ApplicationController
   # PATCH/PUT /municips/1 or /municips/1.json
   def update
     respond_to do |format|
-      if @municip.update(municip_params)
+      if @municip.update(municip_params) 		
+	  
+		UserNotifier.send_signup_email(@user).deliver
         format.html { redirect_to municip_url(@municip), notice: "Municip was successfully updated." }
         format.json { render :show, status: :ok, location: @municip }
       else
